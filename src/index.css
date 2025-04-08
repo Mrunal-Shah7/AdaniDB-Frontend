@@ -1,0 +1,100 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 47% 5%;
+    --foreground: 214 32% 91%;
+
+    --card: 222 47% 7%;
+    --card-foreground: 214 32% 91%;
+
+    --popover: 222 47% 7%;
+    --popover-foreground: 214 32% 91%;
+
+    --primary: 199 89% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 32% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 12%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 18%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen;
+    background-image: radial-gradient(circle at 15% 50%, rgba(17, 24, 39, 0.8), rgba(9, 9, 11, 0) 25%),
+                     radial-gradient(circle at 85% 30%, rgba(17, 24, 39, 0.8), rgba(9, 9, 11, 0) 25%);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-glass-gradient backdrop-blur-md border border-white/5 shadow-lg;
+  }
+  
+  .card-glass {
+    @apply bg-card-gradient backdrop-blur-md border border-white/5 shadow-lg;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent;
+  }
+
+  .bg-dark-gradient {
+    background: linear-gradient(to bottom right, #090b10, #0a0d14, #090b10);
+  }
+
+  /* Animation utilities */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+}
+
