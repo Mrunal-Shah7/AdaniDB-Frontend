@@ -26,6 +26,8 @@ const Header: React.FC = () => {
         custom={0} // First element
         whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} // Hover effect
       >
+
+
         <span className="text-gradient">AdaniDB</span>{" "}
       </motion.h1>
       <motion.h2
@@ -36,6 +38,30 @@ const Header: React.FC = () => {
       >
         XENOSTAR7
       </motion.h2>
+
+      <br></br>
+      <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.4 }}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-red-50/80 dark:bg-red-900/20 border border-red-200/50 dark:border-red-800/50 rounded-full backdrop-blur-sm"
+        >
+          <motion.div
+            className="w-2 h-2 bg-red-500 rounded-full"
+            animate={{ scale: [1, 1.4, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+            <span className="text-red-700 dark:text-red-300 text-sm font-medium">
+              Temporaliy down for a major update
+            </span>
+          </motion.div>
+
+
+
+
+
+
+
     </header>
   );
 };
